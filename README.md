@@ -20,8 +20,10 @@ https://github.com/Qandil11/KMP-Connectivity-Monitor
 ---
 
 ## Screenshots
+<img width="1080" height="2400" alt="Screenshot_20250901_220357" src="https://github.com/user-attachments/assets/92397246-3c1c-4419-bd47-6e7b2b4cbce0" />
 
----
+---<img width="1080" height="2400" alt="Screenshot_20250901_220414" src="https://github.com/user-attachments/assets/10bfdffc-2150-40c1-be2a-f1b145bdafe2" />
+
 
 ## Architecture
 
