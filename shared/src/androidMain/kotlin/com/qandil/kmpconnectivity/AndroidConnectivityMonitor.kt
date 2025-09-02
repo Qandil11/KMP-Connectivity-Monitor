@@ -1,7 +1,6 @@
 package com.qandil.kmpconnectivity
 
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Network
@@ -12,7 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-@SuppressLint("MissingPermission")
 
 class AndroidConnectivityMonitor(
     private val context: Context
