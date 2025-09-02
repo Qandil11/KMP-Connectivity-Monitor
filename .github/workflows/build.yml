@@ -1,4 +1,7 @@
 name: Build (Android + Shared iOS)
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 on:
   push:
