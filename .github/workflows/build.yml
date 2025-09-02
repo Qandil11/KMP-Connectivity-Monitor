@@ -1,7 +1,4 @@
 name: Build (Android + Shared iOS)
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
 
 on:
   push:
@@ -9,31 +6,35 @@ on:
   pull_request:
   workflow_dispatch:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   android:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Setup JDK 17
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-      - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
-      - name: Build Android
+      - uses: gradle/actions/setup-gradle@v3
+      - name: Warm Gradle
+        run: ./gradlew help
+      - name: Build Android + shared
         run: ./gradlew :androidApp:assembleDebug :shared:build
 
   ios-shared:
+    # build iOS only on main or when manually triggered
+    if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main'
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
-      - name: Setup JDK 17
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-      - name: Gradle cache
-        uses: gradle/actions/setup-gradle@v3
-      - name: Compile shared for iOS
-        run: ./gradlew :shared:assemble
+      - uses: gradle/actions/setup-gradle@v3
+      - name: Build KMP for iOS (sim arm64 only)
+        run: ./gradlew :shared:linkDebugFrameworkIosSimulatorArm64
