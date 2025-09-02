@@ -1,5 +1,7 @@
 # KMP Connectivity Monitor
 [![Build (Android + Shared iOS)](https://github.com/Qandil11/KMP-Connectivity-Monitor/actions/workflows/build.yml/badge.svg)](https://github.com/Qandil11/KMP-Connectivity-Monitor/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/Qandil11/KMP-Connectivity-Monitor?style=social)](https://github.com/Qandil11/KMP-Connectivity-Monitor/stargazers)
 
 A tiny **Kotlin Multiplatform (KMP)** library + demo that exposes a single
 `StateFlow<ConnectivityStatus>` to observe **online / offline** status from shared code.
