@@ -1,32 +1,110 @@
-# KMP Connectivity Monitor
-[![Build (Android + Shared iOS)](https://github.com/Qandil11/KMP-Connectivity-Monitor/actions/workflows/build.yml/badge.svg)](https://github.com/Qandil11/KMP-Connectivity-Monitor/actions/workflows/build.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Qandil11/KMP-Connectivity-Monitor?style=social)](https://github.com/Qandil11/KMP-Connectivity-Monitor/stargazers)
+# KMP‑Connectivity‑Monitor
 
-A tiny **Kotlin Multiplatform (KMP)** library + demo that exposes a single
-`StateFlow<ConnectivityStatus>` to observe **online / offline** status from shared code.
+![Build (Android + Shared iOS)](https://github.com/Qandil11/KMP-Connectivity-Monitor/actions/workflows/android-shared-ios-build.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+![Kotlin](https://img.shields.io/badge/Kotlin-MultiPlatform-blue.svg)
 
-- **Android:** uses `ConnectivityManager` network callbacks  
-- **iOS:** uses `SCNetworkReachability` (no CocoaPods required)
-
-https://github.com/Qandil11/KMP-Connectivity-Monitor
+A Kotlin Multiplatform (KMP) library + demo that lets you observe **real‑time connectivity status** (online / offline / unavailable) from shared code, for **Android + iOS**.  
 
 ---
 
-## Features
+## 🚀 Why It Matters
 
-- Unified `ConnectivityMonitor` interface in **commonMain**
-- Real-time updates: `Online` / `Offline` / `Unavailable`
-- Minimal API surface (start/stop + `StateFlow`)
-- Compose Multiplatform demo screen included
+Applications often fail unpredictably when network connectivity changes.  
+This library provides a simple, lightweight, tested solution so that any KMP app can handle connectivity smoothly without platform‑specific code duplication.
 
 ---
 
-## Screenshots
-<img width="1080" height="2400" alt="Screenshot_20250901_220357" src="https://github.com/user-attachments/assets/92397246-3c1c-4419-bd47-6e7b2b4cbce0" />
+## ✨ Features
 
----<img width="1080" height="2400" alt="Screenshot_20250901_220414" src="https://github.com/user-attachments/assets/10bfdffc-2150-40c1-be2a-f1b145bdafe2" />
+- Unified `ConnectivityMonitor` interface in `commonMain`  
+- Real‑time status updates: `Online` / `Offline` / `Unavailable`  
+- Minimal API surface (`start()`, `stop()`, + `StateFlow<ConnectivityStatus>`)  
+- Demo screen using Compose Multiplatform included  
+- No CocoaPods required for iOS usage  
 
+---
 
-## Architecture
+## 📸 Screenshot & Demo
 
+![Demo Screenshot 1](./assets/screenshot1.png)  
+![Demo Screenshot 2](./assets/screenshot2.png)
+
+> 🎬 [YouTube Demo](https://www.youtube.com/@QandilAndroidAI) _(if available)_
+
+---
+
+## 🧩 Usage Example
+
+```kotlin
+// In commonMain or shared module
+val monitor = ConnectivityMonitor()  
+monitor.observe().collect { status ->
+    when (status) {
+        ConnectivityStatus.Online -> // do something  
+        ConnectivityStatus.Offline -> // show offline UI  
+        ConnectivityStatus.Unavailable -> // handle unknown state  
+    }
+}
+```
+
+---
+
+## ⚙️ Quickstart
+
+```bash
+git clone https://github.com/Qandil11/KMP-Connectivity-Monitor.git
+cd KMP-Connectivity-Monitor
+
+# For Android
+./gradlew :androidApp:installDebug
+
+# For iOS (Xcode / SwiftUI Preview)
+open iosApp/ and build in Xcode
+
+# Shared module usage:
+Include dependency in your KMP project:
+```
+
+```kotlin
+// in shared module build.gradle.kts
+implementation("com.github.Qandil11:KMP‑Connectivity‑Monitor:<latest‑tag>")
+```
+
+---
+
+## 🛠 Tech Stack
+
+- Kotlin Multiplatform (commonMain, Android, iOS)  
+- StateFlow / Coroutines  
+- Compose Multiplatform demo screen  
+- Native Android APIs (ConnectivityManager) & iOS Reachability (SCNetworkReachability)  
+
+---
+
+## 📁 Project Structure
+
+```
+KMP‑Connectivity‑Monitor/
+  ├─ androidApp/
+  ├─ iosApp/
+  ├─ shared/
+  ├─ assets/
+  ├─ .github/ workflows
+  └─ README.md
+```
+
+---
+
+## 🔗 Links & Recognition
+
+- GitHub Repo: https://github.com/Qandil11/KMP‑Connectivity‑Monitor  
+- Stars: 9+  
+- Blog / Dev.to Post: [Your article link here]  
+- YouTube Demo: [Your video link if available]  
+
+---
+
+## 📌 License
+
+MIT License
