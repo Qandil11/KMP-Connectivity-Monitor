@@ -27,10 +27,12 @@ This library provides a simple, lightweight, tested solution so that any KMP app
 
 ## 📸 Screenshot & Demo
 
-![Demo Screenshot 1](./assets/screenshot1.png)  
-![Demo Screenshot 2](./assets/screenshot2.png)
+<img width="1080" height="2400" alt="Screenshot_20250901_220414" src="https://github.com/user-attachments/assets/1b2fa590-215c-4b3d-8b93-d91ccd3eb8d9" />
 
-> 🎬 [YouTube Demo](https://www.youtube.com/@QandilAndroidAI) _(if available)_
+<img width="1080" height="2400" alt="Screenshot_20250901_220357" src="https://github.com/user-attachments/assets/b1948894-16f8-4895-abe3-18acfaf59a0d" />
+
+
+> 🎬 [YouTube Demo]([https://www.youtube.com/@QandilAndroidAI](https://www.youtube.com/shorts/p_aBx-PjTWk))
 
 ---
 
@@ -99,9 +101,10 @@ KMP‑Connectivity‑Monitor/
 ## 🔗 Links & Recognition
 
 - GitHub Repo: https://github.com/Qandil11/KMP‑Connectivity‑Monitor  
-- Stars: 9+  
-- Blog / Dev.to Post: [Your article link here]  
-- YouTube Demo: [Your video link if available]  
+- Stars: 9+
+- Blog / Medium Post: [https://medium.com/@qandil.tariq11/a-tiny-kmp-connectivity-monitor-android-ios-no-pods-required-eeebbde99848]  
+- Blog / Dev.to Post: [https://dev.to/qandil_tariq_0e73fd980d58/a-tiny-kmp-connectivity-monitor-android-ios-no-pods-required-1hof]  
+- YouTube Demo: [https://www.youtube.com/shorts/p_aBx-PjTWk]  
 
 ---
 
